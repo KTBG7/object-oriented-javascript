@@ -24,6 +24,68 @@ why.pieces();
 Create a class that can categorize at least 6 of the creatures that you recall observing the Amazon.  Each creature should have 3 unique characteristics, and 2 unique actions that it can do. */
 
 //your code here...
+class Animal {
+  constructor(name, lifespan, foodpreference, action1, action2) {
+    this.name = name;
+    this.lifespan = lifespan;
+    this.foodpreference = foodpreference;
+    this.action1 = action1;
+    this.action2 = action2;
+  }
+  summary() {
+    console.log(
+      `${this.name}s tend to live ${this.lifespan}, they are ${this.foodpreference}. They like to ${this.action1} and ${this.action2}!`
+    );
+  }
+}
+let sloth = new Animal(
+  "Sloth",
+  "20-30 years",
+  "herbivores",
+  "sleep for 15-20 hours in captivity",
+  "hang on trees"
+);
+sloth.summary();
+let jaguar = new Animal(
+  "Jaguar",
+  "12-15 years",
+  "carnivores",
+  "swim and are good swimmers unlike most cats",
+  "they mark their area by clawing trees"
+);
+jaguar.summary();
+let ocelot = new Animal(
+  "Ocelot",
+  "10-13 years",
+  "carnivores",
+  "climb trees to hunt monkeys",
+  "they like to adapt to human habitats and can be found on the outskirts of villages and towns"
+);
+ocelot.summary();
+let puma = new Animal(
+  "Puma",
+  "8-13 years",
+  "carnivores",
+  "run at 50mph",
+  "jump 15 feet high"
+);
+puma.summary();
+let squirrelmonkey = new Animal(
+  "Squirrel Monkey",
+  "13 years",
+  "omnivores",
+  "spend 99% of their time on trees",
+  "they produce different sounds per occasion, for example when in danger or mating"
+);
+squirrelmonkey.summary();
+let kingvulture = new Animal(
+  "King Vulture",
+  "30 years",
+  "carnivores/ scavengers",
+  "fly high above the ground to look for food to scavenge",
+  "they surprisingly tend to avoid flapping their wings unless necessary as they rely on air currents"
+);
+kingvulture.summary();
 
 /*3. Convert the following Object Literals into a general class called Shape, and instantiate the class to generate the object literals
  */
