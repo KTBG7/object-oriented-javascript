@@ -91,14 +91,101 @@ kingvulture.summary();
  */
 
 class Shape {
-  constructor() {
+  constructor(name, sides, base, height, length, width, radius) {
     this.name = name;
     this.sides = sides;
     this.base = base;
     this.height = height;
+    this.length = length;
+    this.width = width;
+    this.radius = radius;
+  }
+  calcArea() {}
+  calcPerimeter() {}
+  calcCircumference() {
+    console.log(
+      `${this.name}'s circumference is calculated to be : ${(
+        2 *
+        Math.PI *
+        this.radius
+      ).toFixed(2)}`
+    );
   }
 }
-
+class Triangle extends Shape {
+  constructor(name, sides, base) {
+    super(name, sides, base);
+    this.base = sides[0];
+    //Calculated the height by altering the pythagorean theorem formula to solve for height.
+    this.height = Math.sqrt(sides[1] * sides[1] - (base * base) / 4);
+  }
+  calcArea() {
+    console.log(
+      `${this.name}'s area is calculated to be : ${
+        0.5 * this.base * this.height
+      }`
+    );
+  }
+  calcPerimeter() {
+    console.log(
+      `${this.name}'s perimeter is calculated to be : ${
+        this.base + (this.sides[1] + this.sides[2])
+      }`
+    );
+  }
+}
+class Rectangle extends Shape {
+  constructor(name, sides, length, width) {
+    super(name, sides, length, width);
+    this.length = length;
+    this.width = width;
+  }
+  calcArea() {
+    console.log(
+      `${this.name}'s area is calculated to be : ${this.length * this.width}`
+    );
+  }
+  calcPerimeter() {
+    console.log(
+      `${this.name}'s perimeter is calculated to be : ${
+        2 * this.length + 2 * this.width
+      }`
+    );
+  }
+}
+class Circle extends Shape {
+  constructor(name, sides, radius) {
+    super(name, sides, radius);
+    this.radius = radius;
+  }
+  calcArea() {
+    console.log(
+      `${this.name}'s area is calculated to be : ${(
+        Math.PI *
+        this.radius ** 2
+      ).toFixed(2)}`
+    );
+  }
+  calcCircumference() {
+    console.log(
+      `${this.name}'s circumference is calculated to be : ${(
+        2 *
+        Math.PI *
+        this.radius
+      ).toFixed(2)}`
+    );
+  }
+}
+let triangle1 = new Triangle("triangle", [4, 7, 7], 4);
+triangle1.calcArea();
+triangle1.calcPerimeter();
+let rectangle1 = new Rectangle("rectangle", 4, 2, 5);
+rectangle1.calcArea();
+rectangle1.calcPerimeter();
+let circle1 = new Circle("circle", 1, 5);
+circle1.calcArea();
+circle1.calcCircumference();
+/*
 const triangle = {
   name: "triangle",
   sides: [4, 7, 7], //lengths of each side
